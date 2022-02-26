@@ -1,0 +1,17 @@
+.dIcon{
+    color:blue;
+    font-weight:bolder;
+    margin : 0px 5px;
+}
+
+.dIcon:hover{
+    cursor:pointer;
+}
+
+.dataContainer{
+    display:inline-block;
+    margin:0.5em;
+    box-shadow:0px 0px 3px 1px;
+    border-radius:5px;
+    padding-top:5px;
+}
