@@ -1,3 +1,6 @@
+##Deploying link for this Website:: https://sumanta2.github.io/uploadDownloadFile/
+
+
 Helping video :   https://youtu.be/1rc2zYqexLI  (storing data in firebase)
 
 here i also used loop(for in loop) if statement inside the jsx also return jsx  form inside a loop and if statement helping video: https://youtu.be/EQugJJGMOxI
