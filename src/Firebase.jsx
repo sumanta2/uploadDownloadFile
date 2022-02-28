@@ -3,13 +3,13 @@ import firebase from 'firebase';
 
 //connection string to connect firebase server
 const firebaseConfig = {
-    apiKey: "AIzaSyAk3O2p7HobLa9V4mkLxPiLeCBPwKxnZz0",
-    authDomain: "reactfirebaseconnection.firebaseapp.com",
-    databaseURL: "https://reactfirebaseconnection-default-rtdb.firebaseio.com",
-    projectId: "reactfirebaseconnection",
-    storageBucket: "reactfirebaseconnection.appspot.com",
-    messagingSenderId: "574167705081",
-    appId: "1:574167705081:web:d9378cfc4a271835d20928"
+    apiKey:process.env.REACT_APP_apiKey,
+    authDomain: process.env.REACT_APP_authDomain,
+    databaseURL: process.env.REACT_APP_databaseURL,
+    projectId: process.env.REACT_APP_projectId,
+    storageBucket: process.env.REACT_APP_storageBucket,
+    messagingSenderId:process.env.REACT_APP_messagingSenderId,
+    appId: process.env.REACT_APP_appId
   };
 
 

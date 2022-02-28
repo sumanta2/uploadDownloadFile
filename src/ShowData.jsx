@@ -1,6 +1,6 @@
 import React from 'react';
 import {saveAs} from 'file-saver'
-import { FiDownload } from "react-icons/fi";
+// import { FiDownload } from "react-icons/fi";
 import { AiOutlineEye } from "react-icons/ai";
 import './styles/ShowData.css'
 
@@ -21,30 +21,23 @@ const pStyle={
 
 const ShowData = ({ id, name, url,fileName,fileType }) => {
 
-    const myDownload=()=>{
-        //var blob = new Blob([url], {type: "text/plain;charset=utf-8"});
-        //saveAs(blob, "hello world.txt");
+    // const myDownload=()=>{
+    //     var blob = new Blob([url],{type: "application/text"});
 
-        var blob = new Blob([url], {type: `${fileType}`});
-        saveAs(blob, `${fileName}`)
-    }
+    //     saveAs(blob, `${fileName}`);
+    // }
     const showContent=()=>{
-        saveAs(url, `${fileName}`)
+            saveAs(url)
     }
 
     return (
         <>
             <div id={id} className='dataContainer'>
-                {/* <img src={`${url}`} alt={message} style={{ }} alt="Upload" /> */}
                 <p style={pStyle}>{fileName}</p>
                 <div className='d-flex justify-content-around align-items-center myPointer'>
-                    <h5>Owner: {name}</h5>
-                    {/* <a href={url} download={fileName}><FiDownload/></a> */}
+                    <h5>Owner: {name}</h5>  
                 <div>
-                    {/* <AiOutlineEye className='dIcon ' onClick={showContent}/> */}
-                    {/* <FiDownload className='dIcon' onClick={myDownload}/> */}
-                    <FiDownload className='dIcon' onClick={showContent}/>
-
+                   <a href={url} target="_blank" download ><AiOutlineEye/></a>
                     </div>
                 </div>
             </div>

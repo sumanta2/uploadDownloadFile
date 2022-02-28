@@ -5,6 +5,8 @@ import 'bootstrap';
 import '../../src/styles/reactcontact.css'
 
 const Reactcontact = ({ getData, setData, setProgress , imageData}) => {
+
+    const storeData=process.env.REACT_APP_storeData
     const [user, setuser] = useState({
         name: '',
     });
@@ -20,7 +22,7 @@ const Reactcontact = ({ getData, setData, setProgress , imageData}) => {
 
     const getdata = async () => {
         try {
-            const result = await fetch("https://reactfirebaseconnection-default-rtdb.firebaseio.com/reactfirebase.json")
+            const result = await fetch(storeData)
             // console.log(result)
             const data = await result.json()
             setMyValue(data)
@@ -44,7 +46,7 @@ const Reactcontact = ({ getData, setData, setProgress , imageData}) => {
         const { name } = user;
         if (name && myState) {
             try {
-                const res = await fetch("https://reactfirebaseconnection-default-rtdb.firebaseio.com/reactfirebase.json", {
+                const res = await fetch(storeData, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",   //here using fetch api and post request we connect to the firebase database and send json data.The URL(first parameter value of the fetch method) get from firebase server and edit some place in this url 

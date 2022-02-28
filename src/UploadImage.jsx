@@ -11,7 +11,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 
 const UploadImage = ({myData, getProgress, setProgress, setImageData}) => {
     const [image, setImage] = useState()
-    const [getUrl,setUrl]=useState("http://via.placeholder.com/300");
+    const [getUrl,setUrl]=useState("");
 
 const dispatch=useDispatch()
 
