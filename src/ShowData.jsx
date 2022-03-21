@@ -30,10 +30,17 @@ const ShowData = ({ id, name, url,fileName,fileType }) => {
             saveAs(url)
     }
 
+    if(fileName.split('.')[0].length >18)
+    {
+        fileName=(fileName.split('.')[0].substring(0,15)+'... .'+fileName.split('.')[1])
+        
+    }
+
     return (
         <>
             <div id={id} className='dataContainer'>
                 <p style={pStyle}>{fileName}</p>
+                {}
                 <div className='d-flex justify-content-around align-items-center myPointer'>
                     <h5>Owner: {name}</h5>  
                 <div>
