@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import 'bootstrap';
 import '../../src/styles/reactcontact.css'
 
-const Reactcontact = ({ getData, setData, setProgress , imageData}) => {
+const Reactcontact = ({ getData, setData, setProgress , imageData, setShowProgress}) => {
 
     const storeData=process.env.REACT_APP_storeData
     const [user, setuser] = useState({
@@ -46,6 +46,7 @@ const Reactcontact = ({ getData, setData, setProgress , imageData}) => {
         const { name } = user;
         if (name && myState) {
             try {
+                setShowProgress(false);
                 const res = await fetch(storeData, {
                     method: "POST",
                     headers: {
@@ -59,6 +60,7 @@ const Reactcontact = ({ getData, setData, setProgress , imageData}) => {
                         fileType:imageData.type,
                     })
                 }
+                
                 );
                 setTimeout(()=>{
                     setData(true)

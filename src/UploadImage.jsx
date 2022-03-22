@@ -3,13 +3,14 @@ import storage from './Firebase'
 // import  {getMetadata}  from "firebase/storage";
 import {getData} from './actions/index'
 import { useDispatch } from "react-redux";
-import {ProgressBar} from 'react-bootstrap';
+// import {ProgressBar} from 'react-bootstrap';
+import ProgressBar from "@ramonak/react-progress-bar";
 import { BsFillFileEarmarkImageFill } from "react-icons/bs";
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 
 
 
-const UploadImage = ({myData, getProgress, setProgress, setImageData}) => {
+const UploadImage = ({myData, getProgress, setProgress, setImageData,showProgress,setShowProgress}) => {
     const [image, setImage] = useState()
     const [getUrl,setUrl]=useState("");
 
@@ -26,7 +27,7 @@ const filePickerRef=useRef()
 
         setImage(e.target.files[0]);
         setImageData({name:e.target.files[0].name,type:e.target.files[0].type})
-
+        setShowProgress(true)
         const uploadImage=storage.ref(e.target.files[0].name).put(e.target.files[0]);
         uploadImage.on("state_changed",(snapshot)=>{setProgress(Math.round((snapshot.bytesTransferred/snapshot.totalBytes)*100)-1)},(err)=>{console.log(err)},
         ()=>{
@@ -37,6 +38,10 @@ const filePickerRef=useRef()
             })
 
         })
+        // if (getProgress == 0)
+        // {
+        //     setProgress(9)
+        // }
         // setTimeout(()=>{   //this method used for testing purpose
         //     console.log("Hello")  
         //     setProgress(100)
@@ -56,7 +61,8 @@ const filePickerRef=useRef()
             <h1>Upload Files</h1>
 
             <div style={{"height":"40px"}}>
-                {(getProgress != 0) &&   <h3>{`Your uploading progress is ${Math.abs(getProgress)} `}</h3> }
+                {/* {(getProgress != 0) &&   <h3>{`Your uploading progress is ${Math.abs(getProgress)} `}</h3> } */}
+                {showProgress && <div style={{"width":"44vw","margin":"auto"}}>  <ProgressBar completed={getProgress} /> </div> }
             </div>
             {/* #Error! Progress-bar are not working here */}
             {/* {getUrl && <img src={getUrl} style={{width:"300px",height:"200px "}} alt="Upload"/>}<br></br> */}
