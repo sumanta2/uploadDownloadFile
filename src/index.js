@@ -12,7 +12,7 @@ import {Provider} from "react-redux";
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>   {/* using provider tag we pass the store object(centralized data) so that this data we easily access for app or it child component */}
-    <App />
+    <App />  
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')

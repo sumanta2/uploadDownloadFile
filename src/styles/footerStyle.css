@@ -1,0 +1,14 @@
+.fstyle{
+    
+    color:white
+    
+}
+.myFooter{
+    display:flex;
+    justify-content: center;
+    bottom: 0px;
+    position: fixed;
+    align-items: center;
+    width:100vw;
+    background-color:black;
+}

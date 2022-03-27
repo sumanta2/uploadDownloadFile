@@ -1,9 +1,10 @@
 import './App.css';
+import MyFooter from './MyFooter';
 import Reactcontact from './component/reactcontact';
 import UploadImage from './UploadImage';
-
 // import { useSelector } from "react-redux";   
 import { useState } from 'react';
+
 
 function App() {
   const [checkProgress,setcheckProgress]=useState(true)
@@ -12,12 +13,14 @@ function App() {
   const [showProgress,setShowProgress]=useState(false)
 
   // const [fileName,setFileName]=useState("suman")
-
+    
   return (
+    
     <div className="App">
        <UploadImage myData={setcheckProgress} getProgress={getProgress} setProgress={setProgress} setImageData={setImageData} showProgress={showProgress} setShowProgress={setShowProgress}/>
 
        <Reactcontact getData={checkProgress} setData={setcheckProgress} setProgress={setProgress} imageData={imageData} setShowProgress={setShowProgress}/>
+       <MyFooter/>
       
     </div>
   );

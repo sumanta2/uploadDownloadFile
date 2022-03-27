@@ -3,6 +3,7 @@ import StoreData from '../StoreData';
 import { useSelector } from "react-redux";
 import 'bootstrap';
 import '../../src/styles/reactcontact.css'
+import moment from 'moment';
 
 const Reactcontact = ({ getData, setData, setProgress , imageData, setShowProgress}) => {
 
@@ -58,6 +59,8 @@ const Reactcontact = ({ getData, setData, setProgress , imageData, setShowProgre
                         imgUrl: myState,
                         fileName:imageData.name,
                         fileType:imageData.type,
+                        time:moment(new Date()).format("Do MMM YYYY"),
+
                     })
                 }
                 
@@ -91,6 +94,7 @@ const Reactcontact = ({ getData, setData, setProgress , imageData, setShowProgre
     }
     return (
         <>
+        {/* {console.log(moment(new Date()).format("Do MMM YYYY")) } */}
             <form className="myForm myStyle"  method='POST'>
                 <h3>Enter Details</h3>
 

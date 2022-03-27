@@ -3,6 +3,8 @@ import {saveAs} from 'file-saver'
 // import { FiDownload } from "react-icons/fi";
 import { AiOutlineEye } from "react-icons/ai";
 import './styles/ShowData.css'
+//import { motion } from "framer-motion"
+import {AnimatePresence, motion} from 'framer-motion/dist/framer-motion'
 
 const myStyle={
     display:"inline-block",
@@ -19,7 +21,7 @@ const pStyle={
     borderRadius:"5px",
 }
 
-const ShowData = ({ id, name, url,fileName,fileType }) => {
+const ShowData = ({ id, name, url,fileName,fileType,time }) => {
 
     // const myDownload=()=>{
     //     var blob = new Blob([url],{type: "application/text"});
@@ -38,6 +40,9 @@ const ShowData = ({ id, name, url,fileName,fileType }) => {
 
     return (
         <>
+            {/* <motion.div {/* whileInView={{ y: [100, 0], opacity: [0, 1] }}
+            transition={{ duration: 0.5 }} */}
+            {console.log("mytime"+time)}
             <div id={id} className='dataContainer'>
                 <p style={pStyle}>{fileName}</p>
                 {}
@@ -48,6 +53,7 @@ const ShowData = ({ id, name, url,fileName,fileType }) => {
                     </div>
                 </div>
             </div>
+            {/* </motion.div> */}
         </>
     )
 }
