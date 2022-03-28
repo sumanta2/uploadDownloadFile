@@ -91,10 +91,10 @@ const dispatch=useDispatch()
         <>
             <h1>Upload Files</h1>
 
-            <div style={{"height":"40px"}}>
+            {/* <div style={{"height":"40px"}}> */}
                 {/* {(getProgress != 0) &&   <h3>{`Your uploading progress is ${Math.abs(getProgress)} `}</h3> } */}
-                {showProgress && <div style={{"width":"44vw","margin":"auto"}}>  <ProgressBar completed={getProgress} /> </div> }
-            </div>
+                {showProgress && <div className='progressBar'>  <ProgressBar completed={getProgress} /> </div> }
+            {/* </div> */}
             {/* {getUrl && <img src={getUrl} style={{width:"300px",height:"200px "}} alt="Upload"/>}<br></br> */}
             {/* <input type="file" style={{display:'none'}} ref={filePickerRef} onChange={(e) => { upLoadImage(e) }} /> */}
             

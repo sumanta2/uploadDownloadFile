@@ -1,9 +1,13 @@
 .dragFile{
     width: 304px;
     height: 148px;
-    margin: auto;
+    margin: 15px auto;
     border-radius: 17px;
     background-color: rgb(134 239 172);
     margin-bottom: 22px;
     border: 2px solid rgb(124 58 237);
+}
+.progressBar{
+    width:44vw;
+    margin:15px auto;
 }
