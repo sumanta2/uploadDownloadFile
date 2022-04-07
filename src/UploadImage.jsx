@@ -89,7 +89,7 @@ const dispatch=useDispatch()
 
     return (
         <>
-            <h1>Upload Files</h1>
+            <h2>Upload Files</h2>
 
             {/* <div style={{"height":"40px"}}> */}
                 {/* {(getProgress != 0) &&   <h3>{`Your uploading progress is ${Math.abs(getProgress)} `}</h3> } */}

@@ -96,7 +96,7 @@ const Reactcontact = ({ getData, setData, setProgress , imageData, setShowProgre
         <>
         {/* {console.log(moment(new Date()).format("Do MMM YYYY")) } */}
             <form className="myForm myStyle"  method='POST'>
-                <h3>Enter Details</h3>
+                <h4>Enter Details</h4>
 
                 <div className="" style={mar}>
                     <span style={{float:"left"}}>Owner</span>
