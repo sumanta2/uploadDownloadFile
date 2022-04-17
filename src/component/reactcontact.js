@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import StoreData from '../StoreData';
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 import 'bootstrap';
 import '../../src/styles/reactcontact.css'
 import moment from 'moment';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-const Reactcontact = ({ getData, setData, setProgress , imageData, setShowProgress}) => {
+const Reactcontact = ({ getData, setData, setProgress , imageData, setShowProgress,Url1}) => {
 
     const storeData=process.env.REACT_APP_storeData
     const [user, setuser] = useState({
@@ -14,8 +16,8 @@ const Reactcontact = ({ getData, setData, setProgress , imageData, setShowProgre
 
     const [value, setMyValue] = useState({})
 
-    const myState = useSelector((state) =>
-        (state.changeUrl));
+    // const myState = useSelector((state) =>
+    //     (state.changeUrl));
 
     useEffect(() => {
         getdata()
@@ -45,7 +47,7 @@ const Reactcontact = ({ getData, setData, setProgress , imageData, setShowProgre
         e.preventDefault()
         setProgress(0);
         const { name } = user;
-        if (name && myState) {
+        if (name && Url1) {
             try {
                 setShowProgress(false);
                 const res = await fetch(storeData, {
@@ -56,7 +58,7 @@ const Reactcontact = ({ getData, setData, setProgress , imageData, setShowProgre
                     body: JSON.stringify({
                         id: new Date().getTime().toString(),
                         name: user.name,
-                        imgUrl: myState,
+                        imgUrl: Url1,
                         fileName:imageData.name,
                         fileType:imageData.type,
                         time:moment(new Date()).format("Do MMM YYYY"),
@@ -69,7 +71,17 @@ const Reactcontact = ({ getData, setData, setProgress , imageData, setShowProgre
                     setData(true)
                 },2000)
                 if (res) {
-                    alert("Data inserted successfully")
+                    //alert("Data inserted successfully")         //-------------------------------------------------------------------
+                    //dark mode of toast notification is not work
+                    toast.success('Data Inserted SuccessFully 🤡', {
+                        position: "top-right",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        });
                     setuser({
                         name: '',
                     })
@@ -80,7 +92,7 @@ const Reactcontact = ({ getData, setData, setProgress , imageData, setShowProgre
                 console.log("Error for server side")
             }
         }
-        else if (myState == "") {
+        else if (Url1 == "") {
             alert("image was not upload properly please wait a while")
         }
         else {
@@ -94,7 +106,6 @@ const Reactcontact = ({ getData, setData, setProgress , imageData, setShowProgre
     }
     return (
         <>
-        {/* {console.log(moment(new Date()).format("Do MMM YYYY")) } */}
             <form className="myForm myStyle"  method='POST'>
                 <h4>Enter Details</h4>
 
@@ -110,6 +121,17 @@ const Reactcontact = ({ getData, setData, setProgress , imageData, setShowProgre
                 </div>
             </form>
             <StoreData value={value} />
+            <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+            />
         </>
     )
 }

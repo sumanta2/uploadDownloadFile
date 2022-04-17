@@ -1,19 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './styles/index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import store from './store';
+// import store from './store';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
-import {Provider} from "react-redux";
+// import {Provider} from "react-redux";
 
 // store.subscribe(()=>{console.log(store.getState())})   it display the content of the redux store
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>   {/* using provider tag we pass the store object(centralized data) so that this data we easily access for app or it child component */}
+    {/* <Provider store={store}>   using provider tag we pass the store object(centralized data) so that this data we easily access for app or it child component */}
     <App />  
-    </Provider>
+    {/* </Provider> */}
   </React.StrictMode>,
   document.getElementById('root')
 );

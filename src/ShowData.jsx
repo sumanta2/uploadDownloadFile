@@ -42,7 +42,7 @@ const ShowData = ({ id, name, url,fileName,fileType,time }) => {
         <>
             {/* <motion.div {/* whileInView={{ y: [100, 0], opacity: [0, 1] }}
             transition={{ duration: 0.5 }} */}
-            {console.log("mytime"+time)}
+            {/* {console.log("mytime"+time)} */}
             <div id={id} className='dataContainer'>
                 <p style={pStyle}>{fileName}</p>
                 {}

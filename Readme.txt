@@ -34,4 +34,6 @@ FILE STRUCTURE
 
 file-saver package used to download file from the URL(npm i file-saver) this not work
 
-bug present when one file uploading it provide option to upload another file need to disabled the upload option
+bug present when one file uploading it provide option to upload another file need to disabled the upload option(solved)
+
+use React-toastify package for notification
