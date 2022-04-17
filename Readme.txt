@@ -37,3 +37,5 @@ file-saver package used to download file from the URL(npm i file-saver) this not
 bug present when one file uploading it provide option to upload another file need to disabled the upload option(solved)
 
 use React-toastify package for notification
+when upload image notification shows when cut this notification again one notification display(bug)
+if two person upload two different file with same name then last uploaded file override file same name first override file

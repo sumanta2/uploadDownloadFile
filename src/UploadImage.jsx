@@ -17,15 +17,28 @@ const UploadImage = ({myData, getProgress, setProgress, setImageData,showProgres
 
     const {getRootProps,getInputProps,isDragActive} = useDropzone({
         onDrop:(acceptedFiles)=>{
-            // console.log(acceptedFiles[0].type)
+            //console.log(acceptedFiles[0].type)
             // acceptedFiles.map((file)=>{console.log(URL.createObjectURL(file))})
 
             setImage(acceptedFiles[0]);
-            // console.log("su"+acceptedFiles[0])
             setImageData({name:acceptedFiles[0].name,type:acceptedFiles[0].type})
             setShowProgress(true)
+            
             const uploadImage=storage.ref(acceptedFiles[0].name).put(acceptedFiles[0]);
-            uploadImage.on("state_changed",(snapshot)=>{setProgress(Math.round((snapshot.bytesTransferred/snapshot.totalBytes)*100)-1)},(err)=>{console.log(err)},
+
+            uploadImage.on("state_changed",(snapshot)=>{setProgress(Math.round((snapshot.bytesTransferred/snapshot.totalBytes)*100)-1)},(err)=>{
+                console.log(err)
+                toast.error('Already one file in this name are present 🤡', {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    });
+                    setShowProgress(false)
+            },
             ()=>{
                 storage.ref().child(acceptedFiles[0].name).getDownloadURL().then((imageUrl)=>{
                     setProgress(100)
