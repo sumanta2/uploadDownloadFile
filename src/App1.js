@@ -15,8 +15,8 @@ const App1 = () => {
 
                 <Route exact path='/' component={App}></Route>
                 <Route exact path='/uploadDownloadFile' component={App}></Route>
-                <Route path='/uploadDownloadFile/Contact' component={Contact}></Route>
-                <Route path='/uploadDownloadFile/About' component={About}></Route>
+                <Route path='/uploadDownloadFile/contact' component={Contact}></Route>
+                <Route path='/uploadDownloadFile/about' component={About}></Route>
                 <Route component={NotFound}></Route>
 
             </Switch>
