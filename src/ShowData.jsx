@@ -46,7 +46,7 @@ const ShowData = ({ id, name, url,fileName,fileType,time }) => {
             <div id={id} className='dataContainer'>
                 <p style={pStyle}>{fileName}</p>
                 {}
-                <div className='d-flex justify-content-around align-items-center myPointer'>
+                <div className='content'>
                     <h6>Owner: {name}</h6>  
                 <div>
                    <a href={url} target="_blank" download ><AiOutlineEye/></a>

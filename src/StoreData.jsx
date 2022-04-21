@@ -3,9 +3,16 @@ import ShowData from './ShowData';
 
 
 const StoreData=({value})=>{
+    const design={
+        display:"flex",
+        flexDirection:"row",
+        flexWrap:"wrap",
+        justifyContent:"center",
+        margin:"4px"
+    }
     return(
     <>  
-        <div className='d-flex flex-row flex-wrap justify-content-center m-4'>
+        <div style={design}>
         {
             value!= null &&
         (Object.entries(value).reverse().map(([key,{id,imgUrl,name,fileName,fileType,time}])=>{  //this method i see sunny singha youtube channel hulu clone video's 1:06:40  part

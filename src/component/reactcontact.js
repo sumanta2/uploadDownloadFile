@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import StoreData from '../StoreData';
 // import { useSelector } from "react-redux";
-import 'bootstrap';
+// import 'bootstrap';
 import '../../src/styles/reactcontact.css'
 import moment from 'moment';
 import { ToastContainer, toast } from 'react-toastify';
@@ -101,20 +101,20 @@ const Reactcontact = ({ getData, setData, setProgress , imageData, setShowProgre
     }
 
 
-    const mar = {
-        margin: "10px",
-    }
+    // const mar = {
+    //     margin: "10px",
+    // }
     return (
         <>
             <form className="myForm myStyle"  method='POST'>
                 <h4>Enter Details</h4>
 
-                <div className="" style={mar}>
+                <div className="" style={{margin:"10px"}}>
                     <span style={{float:"left"}}>Owner</span>
                     <input className='inputStyle' style={{width:"170px",marginLeft:"33px"}} type='text' name='name' placeholder="Enter your name" value={user.name} onChange={getUserData} autoComplete="off" required />
                 </div>
 
-                <div className="" style={mar}>
+                <div className="" style={{margin:"10px"}}>
                     <button className="btn btn-outline-success" onClick={postData} disabled={getData}>
                         Submit
                     </button>
