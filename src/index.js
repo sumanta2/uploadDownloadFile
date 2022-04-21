@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles/index.css';
 import App1 from './App1';
-import {BrowserRouter} from "react-router-dom"; 
+import {BrowserRouter, HashRouter} from "react-router-dom"; 
 import reportWebVitals from './reportWebVitals';
 // import store from './store';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
@@ -13,9 +13,9 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 ReactDOM.render(
   <React.StrictMode>
     {/* <Provider store={store}>   using provider tag we pass the store object(centralized data) so that this data we easily access for app or it child component */}
-    <BrowserRouter>
+    <HashRouter>
     <App1 />  
-    </BrowserRouter>
+    </HashRouter>
     {/* </Provider> */}
   </React.StrictMode>,
   document.getElementById('root')
