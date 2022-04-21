@@ -9,8 +9,8 @@ const NavigationBar = () => {
                 <Container>
                     <Navbar.Brand  href='/uploadDownloadFile'>Upload Files</Navbar.Brand>
                     <Nav className="me-right">
-                        <Nav.Link href="/About">About</Nav.Link>
-                        <Nav.Link href="/Contact">Contact</Nav.Link>
+                        <Nav.Link href="/uploadDownloadFile/About">About</Nav.Link>
+                        <Nav.Link href="/uploadDownloadFile/Contact">Contact</Nav.Link>
                     </Nav>
                 </Container>
             </Navbar>

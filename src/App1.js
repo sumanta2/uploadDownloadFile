@@ -5,6 +5,7 @@ import About from './component/About';
 import Contact from './component/Contact';
 import NavigationBar from './component/NavigationBar';
 import MyFooter from './component/MyFooter';
+import NotFound from './component/NotFound';
 
 const App1 = () => {
     return (
@@ -14,8 +15,9 @@ const App1 = () => {
 
                 <Route exact path='/' component={App}></Route>
                 <Route exact path='/uploadDownloadFile' component={App}></Route>
-                <Route exact path='/Contact' component={Contact}></Route>
-                <Route exact path='/About' component={About}></Route>
+                <Route path='/uploadDownloadFile/Contact' component={Contact}></Route>
+                <Route path='/uploadDownloadFile/About' component={About}></Route>
+                <Route component={NotFound}></Route>
 
             </Switch>
             <MyFooter />
