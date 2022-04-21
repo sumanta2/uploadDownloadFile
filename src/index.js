@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles/index.css';
 import App1 from './App1';
-import {BrowserRouter, HashRouter} from "react-router-dom"; 
+import {BrowserRouter} from "react-router-dom"; 
 import reportWebVitals from './reportWebVitals';
 // import store from './store';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
