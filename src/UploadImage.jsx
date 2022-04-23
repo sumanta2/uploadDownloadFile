@@ -9,6 +9,7 @@ import { useDropzone } from 'react-dropzone'
 import './styles/UploadImages.css'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import upload from './image/uploadEdit.png';
 
 
 const UploadImage = ({ myData, getProgress, setProgress, setImageData, showProgress, setShowProgress, setUrl1 }) => {
@@ -17,8 +18,6 @@ const UploadImage = ({ myData, getProgress, setProgress, setImageData, showProgr
 
     const { getRootProps, getInputProps, isDragActive } = useDropzone({
         onDrop: (acceptedFiles) => {
-            //console.log(acceptedFiles[0].type)
-            // acceptedFiles.map((file)=>{console.log(URL.createObjectURL(file))})
 
             setImage(acceptedFiles[0]);
             setImageData({ name: acceptedFiles[0].name, type: acceptedFiles[0].type })
@@ -68,11 +67,14 @@ const UploadImage = ({ myData, getProgress, setProgress, setImageData, showProgr
 
     //     },[getUrl])
 
+
+
     return (
         <>
             {showProgress && <div className='progressBar'>  <ProgressBar completed={getProgress} /> </div>}
 
-            <div className="dragFile" {...getRootProps()} style={{ display: `${showProgress ? 'none' : ''}` }} >
+            <div className="dragFile" {...getRootProps()} style={{ display: `${showProgress ? 'none' : ''}`,backgroundImage:{upload} }} >
+                { !isDragActive && <img src={upload} alt="upload file" height='144px' width='280px' /> }
                 <input {...getInputProps()} />
                 {isDragActive ? "Drop it like it's hot!" : 'Click me or drag a file to upload!'}
             </div>
