@@ -5,7 +5,7 @@ import moment from 'moment';
 
 export default function Contact() {
     // Need some modification in this page also
-    const [data, setdata] = useState({ name1: "dd", email: "sumantagorai.21@gmail.com", details: "jdididdkdd" })
+    const [data, setdata] = useState({ name1: "", email: "", details: "" })
 
     const storeInformation = process.env.REACT_APP_storeInformation
 
