@@ -76,7 +76,6 @@ const UploadImage = ({ myData, getProgress, setProgress, setImageData, showProgr
             <div className="dragFile" {...getRootProps()} style={{ display: `${showProgress ? 'none' : ''}`,backgroundImage:{upload} }} >
                 { !isDragActive && <img src={upload} alt="upload file" height='144px' width='280px' /> }
                 <input {...getInputProps()} />
-                {isDragActive ? "Drop it like it's hot!" : 'Click me or drag a file to upload!'}
             </div>
             <ToastContainer
                 position="top-right"
