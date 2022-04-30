@@ -7,11 +7,12 @@ import moment from 'moment';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const Reactcontact = ({ getData, setData, setProgress , imageData, setShowProgress,Url1}) => {
-
-    const storeData=process.env.REACT_APP_storeData
+const Reactcontact = ({ getData, setData, setProgress, imageData, setShowProgress, Url1 }) => {
+    const [toggleValue, setToggleValue] = useState(false)
+    const storeData = process.env.REACT_APP_storeData
     const [user, setuser] = useState({
         name: '',
+        password: '',
     });
 
     const [value, setMyValue] = useState({})
@@ -22,6 +23,11 @@ const Reactcontact = ({ getData, setData, setProgress , imageData, setShowProgre
     useEffect(() => {
         getdata()
     }, [])
+
+    const checkVal = () => {
+        setToggleValue(!toggleValue)
+        //console.log(toggleValue);
+    }
 
     const getdata = async () => {
         try {
@@ -59,17 +65,18 @@ const Reactcontact = ({ getData, setData, setProgress , imageData, setShowProgre
                         id: new Date().getTime().toString(),
                         name: user.name,
                         imgUrl: Url1,
-                        fileName:imageData.name,
-                        fileType:imageData.type,
-                        time:moment(new Date()).format("Do MMM YYYY"),
-
+                        fileName: imageData.name,
+                        fileType: imageData.type,
+                        isPassword: toggleValue,
+                        password: user.password,
+                        time: moment(new Date()).format("Do MMM YYYY"),
                     })
                 }
-                
+
                 );
-                setTimeout(()=>{
+                setTimeout(() => {
                     setData(true)
-                },2000)
+                }, 2000)
                 if (res) {
                     //alert("Data inserted successfully")         //-------------------------------------------------------------------
                     //dark mode of toast notification is not work
@@ -81,7 +88,7 @@ const Reactcontact = ({ getData, setData, setProgress , imageData, setShowProgre
                         pauseOnHover: true,
                         draggable: true,
                         progress: undefined,
-                        });
+                    });
                     setuser({
                         name: '',
                     })
@@ -106,15 +113,23 @@ const Reactcontact = ({ getData, setData, setProgress , imageData, setShowProgre
     // }
     return (
         <>
-            <form className="myForm myStyle"  method='POST'>
+            <form className="myForm myStyle" method='POST'>
                 <h4>Enter Details</h4>
 
-                <div className="" style={{margin:"10px"}}>
-                    <span style={{float:"left"}}>Owner</span>
-                    <input className='inputStyle' style={{width:"170px",marginLeft:"33px"}} type='text' name='name' placeholder="Enter your name" value={user.name} onChange={getUserData} autoComplete="off" required />
+                <div className="" style={{ margin: "10px" }}>
+                    <span style={{ float: "left" }}>Owner</span>
+                    <input className='inputStyle' style={{ width: "170px", marginLeft: "33px" }} type='text' name='name' placeholder="Enter your name" value={user.name} onChange={getUserData} autoComplete="off" required />
                 </div>
 
-                <div className="" style={{margin:"10px"}}>
+                <div className="form-check form-switch">
+                    <input className="form-check-input" type="checkbox" name="isPassword" onChange={checkVal} value={false} />
+                    <label className="form-check-label" htmlFor="flexSwitchCheckDefault">use Password</label>
+                    {toggleValue && <input type="password" name="password" value={user.password} onChange={getUserData} placeholder="enter Password" />}
+
+
+                </div>
+
+                <div className="" style={{ margin: "10px" }}>
                     <button className="btn btn-outline-success" onClick={postData} disabled={getData}>
                         Submit
                     </button>

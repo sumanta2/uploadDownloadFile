@@ -9,6 +9,7 @@ const About = () => {
             It is free for everyone.<br></br>
             After 10 days of uploading the files are deleted.<br></br>
             Anyone can download this file which You upload here.<br></br>
+            If you provide password when You upload your file then Your file aren't access by anyone without correct password<br></br>
         </div>
     )
 }
