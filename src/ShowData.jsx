@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import storage from './Firebase'
+import firebase from 'firebase/app';
 import { Modal } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { AiOutlineEye } from "react-icons/ai";
 import { BsFillFileLock2Fill } from "react-icons/bs";
+import { MdDelete } from "react-icons/md";
 import './styles/ShowData.css'
 //import { motion } from "framer-motion"
 import { AnimatePresence, motion } from 'framer-motion/dist/framer-motion'
@@ -27,7 +28,7 @@ const pStyle = {
     justifyContent: "space-around"
 }
 
-const ShowData = ({ id, name, url, fileName, fileType, time, isPassword, password }) => {
+const ShowData = ({ identity, id, name, url, fileName, fileType, time, isPassword, password, getData }) => {
 
     const [show, setShow] = useState(false)
     const [passWord, setPassWord] = useState("");
@@ -42,8 +43,7 @@ const ShowData = ({ id, name, url, fileName, fileType, time, isPassword, passwor
                 setShow(!show)
                 //var inputPassword = window.prompt("Enter your name: ");
 
-                if (passWord != "") 
-                {
+                if (passWord != "") {
 
                     if (password === passWord) {
 
@@ -98,6 +98,56 @@ const ShowData = ({ id, name, url, fileName, fileType, time, isPassword, passwor
 
     }
 
+    const deleteData = async (identity, password, url) => {
+        let checkData=""
+        checkData = window.prompt("Enter Your Password");
+        if (checkData != "" && checkData != null ) {
+            if (checkData === password) {
+                try {
+
+                    var pictureRef = await firebase.storage().refFromURL(url)
+                    await pictureRef.delete()
+
+                    await firebase.database().ref('reactfirebase/' + identity).remove();
+
+                    toast.success('Data Deleted Successfully 🤡', {
+                        position: "top-right",
+                        autoClose: 3000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                    });
+                    getData()
+                }
+                catch (err) {
+                    //console.log(err)
+                    toast.error('Failed to Delete Data 🤡', {
+                        position: "top-right",
+                        autoClose: 3000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                    });
+                }
+            }
+            else {
+                toast.error('You Enter Wrong Password 🤡', {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                });
+            }
+        }
+    }
+
     return (
         <>
             <Modal show={show} onHide={() => { setShow(false) }}>
@@ -121,7 +171,7 @@ const ShowData = ({ id, name, url, fileName, fileType, time, isPassword, passwor
             <motion.div whileInView={{ scale: [0, 0.8, 0.6, 0.9, 0.7, 1], opacity: [0, 1] }}
                 transition={{ duration: 0.9 }}
                 viewport={{ once: true }}>
-                {/* {console.log("mytime" + time)} */}
+                {/* {console.log("mytime  " + identity)} */}
                 <div id={id} className='dataContainer'>
                     <div style={pStyle}>
                         <p>{fileName}</p>
@@ -133,6 +183,7 @@ const ShowData = ({ id, name, url, fileName, fileType, time, isPassword, passwor
 
                         <div>
                             <span style={{ color: "blue", cursor: "pointer" }} onClick={showContent} ><AiOutlineEye /></span>
+                            {isPassword && <span style={{ cursor: "pointer" }} onClick={() => { deleteData(identity, password, url) }} ><MdDelete /></span>}
                         </div>
                     </div>
                 </div>

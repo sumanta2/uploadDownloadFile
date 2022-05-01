@@ -134,7 +134,7 @@ const Reactcontact = ({ getData, setData, setProgress, imageData, setShowProgres
                     </button>
                 </div>
             </form>
-            <StoreData value={value} />
+            <StoreData value={value} getData={getdata} />
             <ToastContainer
                 position="top-right"
                 autoClose={5000}
