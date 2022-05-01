@@ -10,6 +10,7 @@
     margin: auto;
     border-radius:5px;
     min-width:230px;
+    max-width:320px;
     padding:12px;
 }
 
@@ -21,4 +22,8 @@
 }
 .inputStyle:focus{
     outline:none;
+}
+.disabledColor{
+    border-color:rgba(50, 49, 49, 0.942);
+    opacity:0.6;
 }

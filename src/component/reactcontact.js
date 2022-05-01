@@ -91,6 +91,7 @@ const Reactcontact = ({ getData, setData, setProgress, imageData, setShowProgres
                     });
                     setuser({
                         name: '',
+                        password: '',
                     })
                     getdata()
                 }
@@ -118,15 +119,13 @@ const Reactcontact = ({ getData, setData, setProgress, imageData, setShowProgres
 
                 <div className="" style={{ margin: "10px" }}>
                     <span style={{ float: "left" }}>Owner</span>
-                    <input className='inputStyle' style={{ width: "170px", marginLeft: "33px" }} type='text' name='name' placeholder="Enter your name" value={user.name} onChange={getUserData} autoComplete="off" required />
+                    <input className='inputStyle' style={{ width: "160px", marginLeft: "33px" }} type='text' name='name' placeholder="Enter your name" value={user.name} onChange={getUserData} autoComplete="off" required />
                 </div>
-
-                <div className="form-check form-switch">
-                    <input className="form-check-input" type="checkbox" name="isPassword" onChange={checkVal} value={false} />
-                    <label className="form-check-label" htmlFor="flexSwitchCheckDefault">use Password</label>
-                    {toggleValue && <input type="password" name="password" value={user.password} onChange={getUserData} placeholder="enter Password" />}
-
-
+                <span style={{ float: "left" }}>Password</span>
+                    <div className="form-check form-switch" style={{ margin: "10px" }} >
+                        {/* <label className="form-check-label" htmlFor="flexSwitchCheckDefault">{ !toggleValue && 'use Password'}</label> */}
+                        <input type="password" className={`inputStyle ${!toggleValue? 'disabledColor':''}`} name="password" disabled={!toggleValue} style={{ width: "127px", marginLeft: "-10px"}} value={user.password} onChange={getUserData} placeholder="Enter Password" />
+                        <input className="form-check-input" type="checkbox" name="isPassword" onChange={checkVal} value={false} style={{float:"right",marginRight:"5px"}} />
                 </div>
 
                 <div className="" style={{ margin: "10px" }}>
