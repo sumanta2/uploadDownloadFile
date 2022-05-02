@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import StoreData from '../StoreData';
+import {PulseLoader} from 'react-spinners'
 // import { useSelector } from "react-redux";
 // import 'bootstrap';
 import '../../src/styles/reactcontact.css'
@@ -16,6 +17,7 @@ const Reactcontact = ({ getData, setData, setProgress, imageData, setShowProgres
     });
 
     const [value, setMyValue] = useState({})
+    const [loading,setLoading]=useState(false)
 
     // const myState = useSelector((state) =>
     //     (state.changeUrl));
@@ -29,15 +31,18 @@ const Reactcontact = ({ getData, setData, setProgress, imageData, setShowProgres
         //console.log(toggleValue);
     }
 
-    const getdata = async () => {
+    const getdata = async () => {  ////----------------------------------
         try {
+            setLoading(true)
             const result = await fetch(storeData)
             // console.log(result)
             const data = await result.json()
             setMyValue(data)
+            setLoading(false)
         }
         catch (err) {
             console.log("Error to fetch All Data")
+            setLoading(false)
         }
     }
     const getUserData = (event) => {
@@ -134,7 +139,8 @@ const Reactcontact = ({ getData, setData, setProgress, imageData, setShowProgres
                     </button>
                 </div>
             </form>
-            <StoreData value={value} getData={getdata} />
+            {loading ? <PulseLoader color={`#25D6B3`}  size={30} /> : <StoreData value={value} getData={getdata} />}
+            
             <ToastContainer
                 position="top-right"
                 autoClose={5000}
