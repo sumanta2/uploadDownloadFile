@@ -92,10 +92,11 @@ const ShowData = ({ identity, id, name, url, fileName, fileType, time, isPasswor
         }
 
     }
-
-    if (fileName.split('.')[0].length > 18) {
-        fileName = (fileName.split('.')[0].substring(0, 15) + '... .' + fileName.split('.')[1])
-
+    if (fileName != undefined)
+    {
+        if (fileName.split('.')[0].length > 18) {
+           fileName = (fileName.split('.')[0].substring(0, 15) + '... .' + fileName.split('.')[1])
+        }
     }
 
     const deleteData = async (identity, password, url) => {

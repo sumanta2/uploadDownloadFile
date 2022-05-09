@@ -1,6 +1,6 @@
 import React from 'react'
 import App from './App';
-import { Redirect, Route, Switch } from 'react-router-dom';
+import { Redirect, Route, Routes } from 'react-router-dom';
 import About from './component/About';
 import Contact from './component/Contact';
 import NavigationBar from './component/NavigationBar';
@@ -11,15 +11,15 @@ const App1 = () => {
     return (
         <div>
             <NavigationBar />
-            <Switch>
+            <Routes>
 
-                <Route exact path='/' component={App}></Route>
-                <Route exact path='/uploadDownloadFile' component={App}></Route>
-                <Route path='/uploadDownloadFile/contact' component={Contact}></Route>
-                <Route path='/uploadDownloadFile/about' component={About}></Route>
-                <Route component={NotFound}></Route>
+                <Route path='/' element={<App/>}></Route>
+                <Route path='/uploadDownloadFile' element={<App/>}></Route>
+                <Route path='/uploadDownloadFile/contact' element={<Contact/>}></Route>
+                <Route path='/uploadDownloadFile/about' element={<About/>}></Route>
+                <Route element={NotFound}></Route>
 
-            </Switch>
+            </Routes>
             <MyFooter />
         </div>
     )
