@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState,useEffect,useRef} from 'react';
 import firebase from 'firebase/app';
 import { Modal } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
@@ -32,15 +32,23 @@ const ShowData = ({ identity, id, name, url, fileName, fileType, time, isPasswor
 
     const [show, setShow] = useState(false)
     const [passWord, setPassWord] = useState("");
+    const inputEl = useRef(null);
     const handleChange = (e) => {
         setPassWord(e.target.value)
         //console.log(passWord)
     }
+    useEffect(() => {
+        inputEl?.current?.focus();
+    }, [show])
+    
+    
 
     const showContent = () => {
         if (isPassword) {
             try {
+
                 setShow(!show)
+                
                 //var inputPassword = window.prompt("Enter your name: ");
 
                 if (passWord != "") {
@@ -157,7 +165,7 @@ const ShowData = ({ identity, id, name, url, fileName, fileType, time, isPasswor
                 </Modal.Header>
                 <Modal.Body>
                     <form>
-                        <input type="password" className="form-control" id="password" name='password' value={passWord} onChange={handleChange} />
+                        <input ref={inputEl}  type="password" className="form-control" id="password" name='password' value={passWord} onChange={handleChange} />
                     </form>
                 </Modal.Body>
                 <Modal.Footer>

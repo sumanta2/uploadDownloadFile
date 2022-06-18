@@ -39,7 +39,7 @@ const Reactcontact = ({ getData, setData, setProgress, imageData, setShowProgres
             const data = await result.json()
             setMyValue(data)
             setLoading(false)
-            console.log(data)
+            //console.log(data)
         }
         catch (err) {
             console.log("Error to fetch All Data")
