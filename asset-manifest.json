@@ -1,26 +1,26 @@
 {
   "files": {
     "main.css": "/uploadDownloadFile/static/css/main.983b65c7.chunk.css",
-    "main.js": "/uploadDownloadFile/static/js/main.5e4d84c6.chunk.js",
-    "main.js.map": "/uploadDownloadFile/static/js/main.5e4d84c6.chunk.js.map",
-    "runtime-main.js": "/uploadDownloadFile/static/js/runtime-main.a32b9ea3.js",
-    "runtime-main.js.map": "/uploadDownloadFile/static/js/runtime-main.a32b9ea3.js.map",
+    "main.js": "/uploadDownloadFile/static/js/main.ead2138a.chunk.js",
+    "main.js.map": "/uploadDownloadFile/static/js/main.ead2138a.chunk.js.map",
+    "runtime-main.js": "/uploadDownloadFile/static/js/runtime-main.4a158d75.js",
+    "runtime-main.js.map": "/uploadDownloadFile/static/js/runtime-main.4a158d75.js.map",
     "static/css/2.b0ce55e0.chunk.css": "/uploadDownloadFile/static/css/2.b0ce55e0.chunk.css",
-    "static/js/2.92f61556.chunk.js": "/uploadDownloadFile/static/js/2.92f61556.chunk.js",
-    "static/js/2.92f61556.chunk.js.map": "/uploadDownloadFile/static/js/2.92f61556.chunk.js.map",
-    "static/js/3.8c76716f.chunk.js": "/uploadDownloadFile/static/js/3.8c76716f.chunk.js",
-    "static/js/3.8c76716f.chunk.js.map": "/uploadDownloadFile/static/js/3.8c76716f.chunk.js.map",
+    "static/js/2.96b03f0c.chunk.js": "/uploadDownloadFile/static/js/2.96b03f0c.chunk.js",
+    "static/js/2.96b03f0c.chunk.js.map": "/uploadDownloadFile/static/js/2.96b03f0c.chunk.js.map",
+    "static/js/3.88c1a760.chunk.js": "/uploadDownloadFile/static/js/3.88c1a760.chunk.js",
+    "static/js/3.88c1a760.chunk.js.map": "/uploadDownloadFile/static/js/3.88c1a760.chunk.js.map",
     "index.html": "/uploadDownloadFile/index.html",
     "static/css/2.b0ce55e0.chunk.css.map": "/uploadDownloadFile/static/css/2.b0ce55e0.chunk.css.map",
     "static/css/main.983b65c7.chunk.css.map": "/uploadDownloadFile/static/css/main.983b65c7.chunk.css.map",
-    "static/js/2.92f61556.chunk.js.LICENSE.txt": "/uploadDownloadFile/static/js/2.92f61556.chunk.js.LICENSE.txt",
+    "static/js/2.96b03f0c.chunk.js.LICENSE.txt": "/uploadDownloadFile/static/js/2.96b03f0c.chunk.js.LICENSE.txt",
     "static/media/uploadEdit.9c4c22ab.png": "/uploadDownloadFile/static/media/uploadEdit.9c4c22ab.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.a32b9ea3.js",
+    "static/js/runtime-main.4a158d75.js",
     "static/css/2.b0ce55e0.chunk.css",
-    "static/js/2.92f61556.chunk.js",
+    "static/js/2.96b03f0c.chunk.js",
     "static/css/main.983b65c7.chunk.css",
-    "static/js/main.5e4d84c6.chunk.js"
+    "static/js/main.ead2138a.chunk.js"
   ]
 }
