@@ -32,6 +32,7 @@ const ShowData = ({ identity, id, name, url, fileName, fileType, time, isPasswor
 
     const [show, setShow] = useState(false)
     const [passWord, setPassWord] = useState("");
+    const [compCheckData,setCompCheckData]=useState(false)
     const inputEl = useRef(null);
     const handleChange = (e) => {
         setPassWord(e.target.value)
@@ -108,8 +109,11 @@ const ShowData = ({ identity, id, name, url, fileName, fileType, time, isPasswor
     }
 
     const deleteData = async (identity, password, url) => {
-        let checkData=""
-        checkData = window.prompt("Enter Your Password");
+        setShow(false)
+        setCompCheckData(false)
+        let checkData=passWord
+        setPassWord("")
+        //checkData = window.prompt("Enter Your Password");
         if (checkData != "" && checkData != null ) {
             if (checkData === password) {
                 try {
@@ -169,10 +173,10 @@ const ShowData = ({ identity, id, name, url, fileName, fileType, time, isPasswor
                     </form>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="secondary" onClick={() => { setShow(false) }}>
+                    <Button variant="secondaary" onClick={() => { setShow(false) }}>
                         Close
                     </Button>
-                    <Button variant="primary" onClick={showContent}>
+                    <Button variant="primary" onClick={()=>{setCompCheckData?deleteData(identity,password,url):  showContent()}}>
                         Submit
                     </Button>
                 </Modal.Footer>
@@ -192,7 +196,10 @@ const ShowData = ({ identity, id, name, url, fileName, fileType, time, isPasswor
 
                         <div>
                             <span style={{ color: "blue", cursor: "pointer" }} onClick={showContent} ><AiOutlineEye /></span>
-                            {isPassword && <span style={{ cursor: "pointer" }} onClick={() => { deleteData(identity, password, url) }} ><MdDelete /></span>}
+                            {isPassword && <span style={{ cursor: "pointer" }} onClick={() => { 
+                                setCompCheckData(true)
+                                setShow(true)
+                                }} ><MdDelete /></span>}
                         </div>
                     </div>
                 </div>
