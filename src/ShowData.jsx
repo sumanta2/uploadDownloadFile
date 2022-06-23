@@ -185,23 +185,25 @@ const ShowData = ({ identity, id, name, url, fileName, fileType, time, isPasswor
                 transition={{ duration: 0.9 }}
                 viewport={{ once: true }}>
                 {/* {console.log("mytime  " + identity)} */}
-                <div id={id} className='dataContainer'>
+                <div className='decorate'>
+                <div id={id} className='dataContainer' >
                     <div style={pStyle}>
                         <p>{fileName}</p>
-                        {isPassword && <abbr title="Password Protected"><BsFillFileLock2Fill style={{ marginTop: "7px" }} /></abbr>}
+                        {isPassword && <abbr title="Password Protected"><BsFillFileLock2Fill className='decorate2' style={{ marginTop: "7px" }} /></abbr>}
                     </div>
                     { }
                     <div className='content'>
                         <h6>Owner: {name}</h6>
 
                         <div>
-                            <span style={{ color: "blue", cursor: "pointer" }} onClick={showContent} ><AiOutlineEye /></span>
+                            <span style={{ color: "blue", cursor: "pointer" }} onClick={showContent} ><AiOutlineEye className='decorate2' /></span>
                             {isPassword && <span style={{ cursor: "pointer" }} onClick={() => { 
                                 setCompCheckData(true)
                                 setShow(true)
                                 }} ><MdDelete /></span>}
                         </div>
                     </div>
+                </div>
                 </div>
             </motion.div>
 

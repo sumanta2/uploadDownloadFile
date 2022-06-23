@@ -1,5 +1,5 @@
 .dIcon{
-    color:blue;
+    /* color:blue; */
     font-weight:bolder;
     margin : 0px 5px;
 }
@@ -7,16 +7,26 @@
 .dIcon:hover{
     cursor:pointer;
 }
+decorate2{
+    background-image:radial-gradient(#8E0E00,#00C9FF,#92FE9D,#1F1C18);
+    color:transparent;
+
+}
 
 .dataContainer{
     display:inline-block;
-    margin:0.5em;
-    box-shadow:0px 0px 3px 1px;
+    margin:2px;
     border-radius:5px;
     padding-top:5px;
+    background-color:white;
 }
 .content{
     display:flex;
     justify-content: space-around;
     align-items: center;
+}
+.decorate{
+    background-image:radial-gradient(#8E0E00,#00C9FF,#92FE9D,#1F1C18);
+    border-radius:5px;
+    box-shadow:0px 0px 3px 1px ; 
 }

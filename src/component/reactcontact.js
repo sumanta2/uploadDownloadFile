@@ -121,7 +121,7 @@ const Reactcontact = ({ getData, setData, setProgress, imageData, setShowProgres
     return (
         <>
             <form className="myForm myStyle" method='POST'>
-                <h4>Enter Details</h4>
+                <h4 className='heading4'>Enter Details</h4>
 
                 <div className="" style={{ margin: "10px" }}>
                     <span style={{ float: "left" }}>Owner</span>

@@ -12,6 +12,7 @@
     min-width:292px;
     max-width:320px;
     padding:12px;
+    background-image:url("../image/texture1.jpg");
 }
 
 
@@ -19,6 +20,7 @@
     border: none;
     border-bottom: 2px solid green;
     border-radius: 2px;
+    background-color: transparent;
 }
 .inputStyle:focus{
     outline:none;
@@ -26,4 +28,10 @@
 .disabledColor{
     border-color:rgba(50, 49, 49, 0.942);
     opacity:0.6;
+}
+.heading4{
+    background-image: linear-gradient(to right,red, yellow);
+    font-weight:700;
+    -webkit-background-clip: text;
+    color:transparent;
 }

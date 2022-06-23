@@ -11,3 +11,37 @@
     width:44vw;
     margin:15px auto;
 }
+.design{
+    position:absolute;
+    
+    
+    width: 105px;
+    height: 64px;
+    border-radius: 36px;
+    z-index: -1;
+    
+}
+.d1{
+    left: 2vw;
+    margin-top: 55px;
+    background-color: #da3297;
+    filter:blur(22px)
+}
+.d2{
+    right:22px;
+    margin-top:18px;
+    background-color: #544032;
+    filter:blur(30px);
+}
+.d3{
+    left: 22vw;
+    bottom: 117px;
+    background-color:#c3aaa6;
+    filter:blur(22px);
+}
+.d4{
+    left: 62vw;
+    margin-top: 123px;
+    filter:blur(17px);
+    background-color:#65a4c2;
+}

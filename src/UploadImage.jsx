@@ -61,17 +61,17 @@ const UploadImage = ({ myData, getProgress, setProgress, setImageData, showProgr
         }
     })
 
-    // const dispatch=useDispatch()
-
-    //     useEffect(()=>{
-    //         dispatch(getData(getUrl))
-
-    //     },[getUrl])
-
 
 
     return (
         <>
+        <div className='design d1'></div>
+        <div className='design d2'></div>
+
+        <div className='design d3'></div>
+        <div className='design d4'></div>
+        
+
             {showProgress && <div className='progressBar'>  <ProgressBar completed={getProgress} /> </div>}
 
             <div className="dragFile" {...getRootProps()} style={{ display: `${showProgress ? 'none' : ''}`,backgroundImage:{upload} }} >
