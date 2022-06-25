@@ -1,7 +1,8 @@
 .main{
     width:199px;
     margin:auto;
-    padding-top: 6px;
+    padding-top: 16px;
+
 }
 .round{
     width:45px;
@@ -16,3 +17,4 @@
     width:140px;
     margin-left:11px;
 }
+

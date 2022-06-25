@@ -35,3 +35,16 @@
     -webkit-background-clip: text;
     color:transparent;
 }
+.skeleton{
+    display:flex;
+    /* margin:auto; */
+    
+}
+
+
+@media screen and (max-width: 500px) {
+    .skeleton {
+      display: flex;
+      flex-direction:column;
+    }
+  }

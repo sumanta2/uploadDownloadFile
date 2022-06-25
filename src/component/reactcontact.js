@@ -145,7 +145,7 @@ const Reactcontact = ({ getData, setData, setProgress, imageData, setShowProgres
                     </button>
                 </div>
             </form>
-            {loading ? <div style={{display:"flex"}}><SkeletonComp/>  <SkeletonComp/></div>  : <StoreData value={value} getData={getdata} /> }
+            {loading ? <div className="skeleton"><SkeletonComp/>  <SkeletonComp/></div>  :  <StoreData value={value} getData={getdata} />}
             
             <ToastContainer
                 position="top-right"
