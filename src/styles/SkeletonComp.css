@@ -1,0 +1,18 @@
+.main{
+    width:199px;
+    margin:auto;
+    padding-top: 6px;
+}
+.round{
+    width:45px;
+    height:45px;
+    float:left;
+    border-radius: 50%;
+}
+.myFlex{
+    display:flex;
+}
+.small{
+    width:140px;
+    margin-left:11px;
+}

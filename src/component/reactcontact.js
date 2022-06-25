@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import StoreData from '../StoreData';
-import {PulseLoader} from 'react-spinners'
+//--import {PulseLoader} from 'react-spinners'
+import SkeletonComp from './SkeletonComp';
+
 // import { useSelector } from "react-redux";
 // import 'bootstrap';
 import '../../src/styles/reactcontact.css'
 import moment from 'moment';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import TextField from '@mui/material/TextField';
 
 const Reactcontact = ({ getData, setData, setProgress, imageData, setShowProgress, Url1 }) => {
     const [toggleValue, setToggleValue] = useState(true)
@@ -126,6 +129,8 @@ const Reactcontact = ({ getData, setData, setProgress, imageData, setShowProgres
                 <div className="" style={{ margin: "10px" }}>
                     <span style={{ float: "left" }}>Owner</span>
                     <input className='inputStyle' style={{ width: "160px", marginLeft: "33px" }} type='text' name='name' placeholder="Enter your name" value={user.name} onChange={getUserData} autoComplete="off" required />
+                    {/* <TextField className="inputStyle"name='name' style={{ width: "160px", marginLeft: "33px",padding:"0px" }} type='text' label="Enter your name" variant="standard" value={user.name} onChange={getUserData} autoComplete="off" required  /> */}
+
                 </div>
                 <span style={{ float: "left" }}>Password</span>
                     <div className="form-check form-switch" style={{ margin: "10px" }} >
@@ -140,7 +145,7 @@ const Reactcontact = ({ getData, setData, setProgress, imageData, setShowProgres
                     </button>
                 </div>
             </form>
-            {loading ? <PulseLoader color={`#25D6B3`}  size={30} /> : <StoreData value={value} getData={getdata} />}
+            {loading ? <div style={{display:"flex"}}><SkeletonComp/>  <SkeletonComp/></div>  : <StoreData value={value} getData={getdata} /> }
             
             <ToastContainer
                 position="top-right"
