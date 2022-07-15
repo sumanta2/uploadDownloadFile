@@ -173,17 +173,17 @@ const ShowData = ({ identity, id, name, url, fileName, fileType, time, isPasswor
                     </form>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="secondaary" onClick={() => { setShow(false) }}>
+                    <Button variant="secondary" onClick={() => { setShow(false) }}>
                         Close
                     </Button>
-                    <Button variant="primary" onClick={()=>{setCompCheckData?deleteData(identity,password,url):  showContent()}}>
+                    <Button variant="primary" onClick={()=>{compCheckData?deleteData(identity,password,url):  showContent()}}>
                         Submit
                     </Button>
                 </Modal.Footer>
             </Modal>
-            <motion.div whileInView={{ scale: [0, 0.8, 0.6, 0.9, 0.7, 1], opacity: [0, 1] }}
+            {/* <motion.div whileInView={{ scale: [0, 0.8, 0.6, 0.9, 0.7, 1], opacity: [0, 1] }}
                 transition={{ duration: 0.9 }}
-                viewport={{ once: true }}>
+                viewport={{ once: true }}> */}
                 {/* {console.log("mytime  " + identity)} */}
                 <div className='decorate'>
                 <div id={id} className='dataContainer' >
@@ -205,7 +205,7 @@ const ShowData = ({ identity, id, name, url, fileName, fileType, time, isPasswor
                     </div>
                 </div>
                 </div>
-            </motion.div>
+            {/* </motion.div> */}
 
             <ToastContainer
                 position="top-right"
