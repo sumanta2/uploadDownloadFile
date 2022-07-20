@@ -60,9 +60,20 @@ const Reactcontact = ({ getData, setData, setProgress, imageData, setShowProgres
     }
     const postData = async (e) => {
         e.preventDefault()
-        setProgress(0);
         const { name } = user;
-        if (name && Url1) {
+        if(user.password==""){
+            toast.warn('Blank password does not Allowed', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
+        }
+        else if (name && Url1) {
+            setProgress(0);
             try {
                 setShowProgress(false);
                 const res = await fetch(storeData, {

@@ -193,7 +193,7 @@ const ShowData = ({ identity, id, name, url, fileName, fileType, time, isPasswor
                     </div>
                     { }
                     <div className='content'>
-                        <h6>Owner: {name}</h6>
+                        <h6 className="overflowText">Owner: {name}</h6>
 
                         <div>
                             <span style={{ color: "blue", cursor: "pointer" }} onClick={showContent} ><AiOutlineEye className='decorate2' /></span>

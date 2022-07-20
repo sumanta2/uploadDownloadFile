@@ -31,3 +31,10 @@ decorate2{
     box-shadow:0px 0px 3px 1px ; 
     margin:7px;
 }
+.overflowText{
+    display: inline-block;
+    width: 180px;
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+}
