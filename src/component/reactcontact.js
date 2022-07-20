@@ -61,7 +61,7 @@ const Reactcontact = ({ getData, setData, setProgress, imageData, setShowProgres
     const postData = async (e) => {
         e.preventDefault()
         const { name } = user;
-        if(user.password==""){
+        if(user.password=="" && toggleValue){
             toast.warn('Blank password does not Allowed', {
                 position: "top-right",
                 autoClose: 5000,

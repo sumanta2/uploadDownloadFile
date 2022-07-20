@@ -21,7 +21,7 @@ const UploadImage = ({ myData, getProgress, setProgress, setImageData, showProgr
         onDrop: (acceptedFiles) => {
 
             setImage(acceptedFiles[0]);
-            setImageData({ name: acceptedFiles[0].name, type: acceptedFiles[0].type })
+            setImageData({ name: acceptedFiles[0].name, type: acceptedFiles[0].type})
             setShowProgress(true)
 
             const uploadImage = storage.ref(acceptedFiles[0].name).put(acceptedFiles[0]);
