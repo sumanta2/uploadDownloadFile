@@ -78,17 +78,7 @@ const UploadImage = ({ myData, getProgress, setProgress, setImageData, showProgr
                 { !isDragActive && <img src={upload} alt="upload file" height='144px' width='280px' /> }
                 <input {...getInputProps()} />
             </div>
-            <ToastContainer
-                position="top-right"
-                autoClose={5000}
-                hideProgressBar={false}
-                newestOnTop={false}
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-            />
+            {/* its toastContainer present in app1.js file */}
         </>
     )
 }

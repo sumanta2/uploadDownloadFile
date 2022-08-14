@@ -1,6 +1,7 @@
 import React from 'react'
 import App from './App';
 import { Redirect, Route, Routes } from 'react-router-dom';
+import { ToastContainer} from 'react-toastify';
 import About from './component/About';
 import Contact from './component/Contact';
 import NavigationBar from './component/NavigationBar';
@@ -20,6 +21,17 @@ const App1 = () => {
                 <Route element={NotFound}></Route>
 
             </Routes>
+            <ToastContainer
+                position="top-right"
+                autoClose={3000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+            />
             <MyFooter />
         </div>
     )

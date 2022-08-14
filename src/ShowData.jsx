@@ -207,17 +207,7 @@ const ShowData = ({ identity, id, name, url, fileName, fileType, time, isPasswor
                 </div>
             {/* </motion.div> */}
 
-            <ToastContainer
-                position="top-right"
-                autoClose={3000}
-                hideProgressBar={false}
-                newestOnTop={false}
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-            />
+            {/* its toastContainer present in app1.js file */}
         </>
     )
 }

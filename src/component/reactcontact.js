@@ -158,17 +158,7 @@ const Reactcontact = ({ getData, setData, setProgress, imageData, setShowProgres
             </form>
             {loading ? <div className="skeleton"><SkeletonComp/>  <SkeletonComp/></div>  :  <StoreData value={value} getData={getdata} />}
             
-            <ToastContainer
-                position="top-right"
-                autoClose={5000}
-                hideProgressBar={false}
-                newestOnTop={false}
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-            />
+            {/* its toastContainer present in app1.js file */}
         </>
     )
 }

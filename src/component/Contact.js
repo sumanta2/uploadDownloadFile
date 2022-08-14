@@ -103,17 +103,7 @@ export default function Contact() {
                 <textarea placeholder='Enter Some Information' onChange={myChange} value={data.details} name="details" className="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
             </div>
             <button type="submit" className='btn mx-2 my-2 btn-outline-success' onClick={submitData}>Submit</button>
-            <ToastContainer
-                position="top-right"
-                autoClose={5000}
-                hideProgressBar={false}
-                newestOnTop={false}
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-            />
+            {/* its toastContainer present in app1.js file */}
         </div>
     )
 }
