@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+# EASY UPLOAD
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Live Link - https://sumanta2.github.io/uploadDownloadFile/
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## DEMO VIDEO 480p
 
-### `npm start`
+https://github.com/sumanta2/uploadDownloadFile/assets/72364211/f6a9b7c7-1616-4676-ac5f-4b87c6cf5da6
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## DEMO VIDEO 720p
 
-### `npm test`
+https://drive.google.com/file/d/1ABT7SrE9dfxUJ35z_oabowic--3q5at2/view?usp=sharing
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## INSTALLATION
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+ 1. git clone https://github.com/sumanta2/uploadDownloadFile.git
+ 2. cd uploadDownloadFile
+ 3. npm install
+ 4. npm start 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## FEATURES
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+1. Home Page
+    - Upload file by Drag & Drop
+    - Display all Uploaded file
+    - Authenticate all file separately
+    - Download uploaded file
+    - Delete Specific Uploaded file
+2. About Page
+3. Contact Page
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## TECHNOLOGIES USED
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### FRONTEND
 
-## Learn More
+1. React JS
+2. React Router v6
+3. react-icons
+4. react-dropzone
+5. react-toastify  
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### BACKEND
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Firebase Storage
+2. Firebase Realtime Database 
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## SNAPSHOTS
 
-### Analyzing the Bundle Size
+|       PAGE NAME        |                                           DESKTOP VIEW                                            | MOBILE VIEW (320px)       |
+| :--------------------: | :--------------------------------------------------------------------------------------------------------: | ------------------------- |
+|      HOME PAGE        | ![1](https://github.com/sumanta2/uploadDownloadFile/assets/72364211/9bac5722-ba96-45ee-983e-f2641df5ea7a) | ![1](https://github.com/sumanta2/uploadDownloadFile/assets/72364211/395a96e3-fec4-4221-8dc2-b36fe5eb5a19) |
+|      ABOUT PAGE       | ![8](https://github.com/sumanta2/uploadDownloadFile/assets/72364211/72f7d3ad-9c1a-4011-81f0-dcad9736c454) | ![2](https://github.com/sumanta2/uploadDownloadFile/assets/72364211/30919026-929d-48fe-9f26-9856696b4fa1) |
+|  CONTACT PAGE  | ![2](https://github.com/sumanta2/uploadDownloadFile/assets/72364211/396c658b-94fd-4866-8a5a-890e097703b5) | ![3](https://github.com/sumanta2/uploadDownloadFile/assets/72364211/de50bc5f-dca0-494e-96f4-1112b9f6b5fd) |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
